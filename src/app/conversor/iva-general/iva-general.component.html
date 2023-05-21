@@ -1,0 +1,20 @@
+<!-- Inicia un formulario. Este formulario se utilizará para introducir el valor de la base imponible -->
+<form>
+    <!-- Etiqueta para el campo de la base imponible -->
+    <label for="baseImponible">Base imponible:</label>
+    
+    <!-- Campo de entrada para la base imponible. 
+    Este campo permite introducir un número.
+    La directiva [(ngModel)] establece una vinculación bidireccional con la variable baseImponible del componente. 
+    Esto significa que cualquier cambio en este campo de entrada se reflejará en la variable baseImponible del componente y viceversa -->
+    <input type="number" [(ngModel)]="baseImponible" id="baseImponible" name="baseImponible">
+    
+    <!-- Botón que, al hacer clic en él, llama al método calcularIva() del componente. 
+    Este método se encargará de calcular el IVA general basándose en el valor de la base imponible introducido -->
+    <button (click)="calcularIva()">Calcular IVA General</button>
+</form>
+
+<!-- Muestra el valor del IVA general calculado. 
+Este valor se actualiza automáticamente cada vez que se recalcula el IVA (cada vez que se hace clic en el botón "Calcular IVA General") -->
+<p>El IVA reducido calculado es: {{ iva }}</p>
+<p>El precio total (base imponible + IVA) es: {{ precioTotal }}</p> <!-- Nueva línea para mostrar el precio total -->

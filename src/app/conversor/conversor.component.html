@@ -1,0 +1,54 @@
+<!-- Sección principal de la página. -->
+<section>
+    <!-- Cabecera de la sección. -->
+    <header>
+        <!-- Título principal de la página. -->
+        <h1>Conversor de IVA</h1>
+    </header>
+
+    <!-- Formulario que los usuarios pueden llenar. -->
+    <form>
+        <!-- Conjunto de campos en el formulario. -->
+        <fieldset>
+            <!-- Leyenda para el conjunto de campos. -->
+            <legend>Cálculo del IVA</legend>
+
+            <!-- Campo de entrada para la base imponible. -->
+            <p>
+                <!-- Etiqueta para el campo de base imponible. -->
+                <label for="baseImponible">Base imponible:</label>
+
+                <!-- Campo de entrada para la base imponible. -->
+                <!-- El valor de este campo se enlaza bidireccionalmente a la variable baseImponible en el componente. -->
+                <input type="number" [(ngModel)]="baseImponible" id="baseImponible" name="baseImponible">
+            </p>
+
+            <!-- Campo de selección para el tipo de IVA. -->
+            <p>
+                <!-- Etiqueta para el campo de tipo de IVA. -->
+                <label for="tipoIva">Tipo de IVA:</label>
+
+                <!-- Campo de selección para el tipo de IVA. -->
+                <!-- El valor seleccionado se enlaza bidireccionalmente a la variable tipoIva en el componente. -->
+                <select [(ngModel)]="tipoIva" id="tipoIva" name="tipoIva">
+                    <!-- Opciones para el campo de selección. -->
+                    <option value="general">General</option>
+                    <option value="reducido">Reducido</option>
+                    <option value="superReducido">Super reducido</option>
+                </select>
+            </p>
+
+            <!-- Botón para calcular el IVA. -->
+            <p>
+                <!-- Al hacer clic en el botón, se llama a la función calcularIva() en el componente. -->
+                <input value="Calcular IVA" type="button" (click)="calcularIva()" name="calcularIvaButton">
+            </p>
+        </fieldset>
+    </form>
+
+    <!-- Se muestra el IVA calculado. -->
+    <p>El IVA calculado es: {{ iva }}</p>
+
+    <!-- Se muestra el precio total (base imponible + IVA). -->
+    <p>El precio total (base imponible + IVA) es: {{ precioTotal }}</p>
+</section>

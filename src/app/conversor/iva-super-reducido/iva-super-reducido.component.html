@@ -1,0 +1,18 @@
+<!-- Inicio del formulario -->
+<form>
+    <!-- Etiqueta para el campo de entrada de la base imponible -->
+    <label for="baseImponible">Base imponible:</label>
+    
+    <!-- Campo de entrada para la base imponible. El valor de este campo está vinculado (mediante ngModel) a la propiedad baseImponible en el archivo TypeScript del componente -->
+    <input type="number" [(ngModel)]="baseImponible" id="baseImponible" name="baseImponible">
+    
+    <!-- Botón que al hacer clic llama a la función calcularIva() del componente TypeScript para calcular el IVA súper reducido -->
+    <button (click)="calcularIva()">Calcular IVA Super Reducido</button>
+</form>
+<!-- Fin del formulario -->
+
+<!-- Párrafo que muestra el IVA calculado. La cantidad de IVA se vincula desde la propiedad iva del archivo TypeScript del componente -->
+<p>El IVA reducido calculado es: {{ iva }}</p>
+
+<!-- Párrafo que muestra el precio total (la suma de la base imponible y el IVA). El precio total se vincula desde la propiedad precioTotal del archivo TypeScript del componente -->
+<p>El precio total (base imponible + IVA) es: {{ precioTotal }}</p> 

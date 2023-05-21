@@ -1,0 +1,21 @@
+<!-- Aquí empieza un formulario HTML. El formulario no tiene acción ni método asignado, ya que la lógica del formulario se maneja completamente por Angular. -->
+<form>
+
+    <!-- Se muestra una etiqueta 'label' para el campo de entrada del valor 'base imponible'. -->
+    <label for="baseImponible">Base imponible:</label>
+
+    <!-- Este es el campo de entrada para la 'base imponible'. 
+         Se utiliza la directiva [(ngModel)] de Angular para vincular el valor de este campo a la propiedad 'baseImponible' del componente. 
+         Cuando el valor de este campo cambia en la interfaz de usuario, también cambia el valor de la propiedad 'baseImponible' en el componente. -->
+    <input type="number" [(ngModel)]="baseImponible" id="baseImponible" name="baseImponible">
+
+    <!-- Este es un botón que, al hacer clic, activa el método 'calcularIva' del componente. -->
+    <button (click)="calcularIva()">Calcular IVA Reducido</button>
+
+</form>
+
+<!-- Este párrafo muestra el valor de 'iva' calculado. 
+     Cuando el valor de 'iva' cambia en el componente, también cambia en la interfaz de usuario.
+     La expresión entre llaves dobles {{ }} es la sintaxis de interpolación de Angular, que muestra el valor de una propiedad del componente. -->
+<p>El IVA reducido calculado es: {{ iva }}</p>
+<p>El precio total (base imponible + IVA) es: {{ precioTotal }}</p> <!-- Nueva línea para mostrar el precio total -->
